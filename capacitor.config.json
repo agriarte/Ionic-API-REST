@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "listodoapi",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

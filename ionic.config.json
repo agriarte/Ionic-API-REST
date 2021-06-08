@@ -1,0 +1,7 @@
+{
+  "name": "listodoapi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
