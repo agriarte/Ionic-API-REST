@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { PostProviderService } from '../services/postprovider.service';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +9,22 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  arrayPosts: any; //Creamos la variable donde guardaremos los datos que nos retorna el servicio
+
+  public prueba: string;
+
+  constructor(public navCtrl: NavController, public postProvider: PostProviderService) { }
+
+  ionViewDidEnter() {
+    this.getPost();//Llamamos a la función getPost cuando la vista se cargue
+  }
+
+  getPost() {
+    this.postProvider.getPosts()
+      .then(data => {
+        this.arrayPosts = data;
+        console.log(this.arrayPosts);
+      });
+  }
 
 }
