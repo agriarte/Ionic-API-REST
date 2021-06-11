@@ -11,8 +11,6 @@ export class Tab1Page {
 
   arrayPosts: any; //Creamos la variable donde guardaremos los datos que nos retorna el servicio
 
-  public prueba: string;
-
   constructor(public navCtrl: NavController, public postProvider: PostProviderService) { }
 
   ionViewDidEnter() {
@@ -23,7 +21,6 @@ export class Tab1Page {
     this.postProvider.getPosts()
       .then(data => {
         this.arrayPosts = data;
-        console.log(this.arrayPosts);
       });
   }
 

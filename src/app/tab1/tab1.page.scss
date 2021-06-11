@@ -1,6 +1,41 @@
-.tarjeta {
-  margin: auto;
-  width: 60%;
-  border: 2px solid #73AD21;
-  padding: 10px;
+.separador{
+  margin-bottom: 2rem;
 }
+.tarjeta {
+  margin: auto; //centrar tarjeta
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  width: 60%;
+  border: 2px solid #001c77;
+
+  background-color: #e4caca;
+}
+
+ion-content{
+
+  --ion-background-color:#b8b8b8;
+  --ion-text-color: #003881;
+}
+
+
+
+
+
+ion-title {
+  -ion-background-color:#ff3cc5; // ?? no hace nada
+  background-color: #000279; // esta sí  es la que pinta fondo
+  --ion-text-color: #fc0909; // ?? no hace nada, prevalece el color que pone app.component.scss
+  color: #c4fa2e; // texto blanco, se impone sobre el valor  de app.component.scss
+
+  padding: 18px;//engorda la caja de ion-title para que se vea background color sin bordes
+
+
+
+
+}
+
+
+
+
+

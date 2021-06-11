@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true"  >
   <ion-toolbar>
     <ion-title>
       Lectura API JSON
@@ -6,24 +6,15 @@
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
+  <div class="separador"></div>
+  <!-- IMPORTANTE PONER ? en el array. -->
+  <p style="margin: auto; margin-bottom: 1rem; width: 60%; background-color: chocolate; padding: 5px; border: 2px solid rgb(0, 0, 0);">
+    Número de registros: {{arrayPosts?.length || '0'}}</p>
   <div class="tarjeta" *ngFor="let post of arrayPosts">
     <p>Id: {{post.id}}</p>
     <p>UserId: {{post.userId}}</p>
     <p>Título: {{post.title}}</p>
-    <p>Completado: {{post.completed}}</p>
+    <ion-label>Completado: </ion-label>
+    <ion-checkbox value="Completado: " checked="{{post.completed}}"></ion-checkbox>
   </div>
 </ion-content>
-
-
-<ion-toolbar>
-  <ion-title>
-    Test API IONIC
-  </ion-title>
-  <ion-toolbar>
-
-    <ion-content padding>
-      <div class="post" *ngFor="let post of arrayPosts">
-        <h2>{{post.title}}</h2>
-        <p>{{post.body}}</p>
-      </div>
-    </ion-content>

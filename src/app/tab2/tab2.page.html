@@ -1,17 +1,60 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="success">
+
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon name="beer"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Mi Tab2 con Ionic</ion-title>
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-label class="ion-padding" color="warning">Pruebas de elementos ion-</ion-label>
+
+  <ion-list inset="true" lines="full">
+    <ion-item>
+      <ion-label>Mostrar Lista</ion-label>
+      <ion-toggle slot="end" [(ngModel)]="verLista" name="miListado" color="medium" [checked]="verLista"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="verLista; else elseBlock">
+
+    <!-- para true, bucle FOR del array -->
+   <!-- ??? inset y lines no hacen nada -->
+    <ion-list inset="true" lines="full">
+      <div *ngFor="let post of arrayPosts" class="ion-padding">
+
+        <ion-item>
+          <ion-label>Id: {{post.id}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <p>UserId: {{post.userId}}</p>
+        </ion-item>
+        <ion-item>
+          <ion-label>Título: {{post.title}}</ion-label>
+        </ion-item>
+        <ion-item color="dark">
+          <ion-label>Completado: </ion-label>
+          <ion-checkbox color="warning" value="Completado: " checked="{{post.completed}}"></ion-checkbox>
+        </ion-item>
+      </div>
+    </ion-list>
+
+  </div>
+  <ng-template #elseBlock>
+    <!-- para false -->
+    <ion-chip color="warning"> Nada que mostrar</ion-chip>
+  </ng-template>
+
+
 </ion-content>
